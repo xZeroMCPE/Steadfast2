@@ -950,9 +950,9 @@ class Player extends Human implements CommandSender, InventoryHolder, IPlayer{
 			'pocketmine\network\protocol\AddItemEntityPacket',
 			'pocketmine\network\protocol\ExplodePacket',
 			'pocketmine\network\protocol\AddEntityPacket',
- 		];
+			'pocketmine\network\protocol\AvailableCommandsPacket',
+		];
  		$disallowedPackets = [
- 			'pocketmine\network\protocol\AvailableCommandsPacket',
 			'pocketmine\network\protocol\SetEntityDataPacket',	// tnt fuse time crash
  		];
  		if (!in_array(get_class($packet), $allowedPackets)) {
