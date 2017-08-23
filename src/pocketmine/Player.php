@@ -951,6 +951,7 @@ class Player extends Human implements CommandSender, InventoryHolder, IPlayer{
 			'pocketmine\network\protocol\ExplodePacket',
 			'pocketmine\network\protocol\AddEntityPacket',
 			'pocketmine\network\protocol\AvailableCommandsPacket',
+			'pocketmine\network\protocol\TextPacket',
 		];
  		$disallowedPackets = [
 			'pocketmine\network\protocol\SetEntityDataPacket',	// tnt fuse time crash
@@ -2552,6 +2553,7 @@ class Player extends Human implements CommandSender, InventoryHolder, IPlayer{
 				break;
 			/** @minProtocol 120 */
 			case 'COMMAND_REQUEST_PACKET':
+				print_r($packet);
 				if ($packet->command[0] != '/') {
 					$this->sendMessage('Invalid command data.');
 					break;
